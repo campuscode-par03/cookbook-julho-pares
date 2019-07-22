@@ -1,0 +1,37 @@
+<div>
+  <% if recipe.errors.any? %>
+    <p>Não foi possível salvar a receita</p>
+  <% end %>
+</div>
+
+<%= form_with model: recipe do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'Título' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recipe_type_id, 'Tipo da Receita' %>
+    <%= f.collection_select :recipe_type_id, recipe_types, :id, :name, {}, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cuisine_id, 'Cozinha' %>
+    <%= f.collection_select :cuisine_id, cuisines, :id, :name, {}, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :difficulty, 'Dificuldade' %>
+    <%= f.text_field :difficulty, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cook_time, 'Tempo de Preparo' %>
+    <%= f.text_field :cook_time, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ingredients, 'Ingredientes' %>
+    <%= f.text_area :ingredients, class: 'form-control', row: '3' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cook_method, 'Como Preparar' %>
+    <%= f.text_area :cook_method, class: 'form-control', row: '3' %>
+  </div>
+  <%= f.submit 'Enviar', class: 'btn btn-primary' %>
+<% end %>

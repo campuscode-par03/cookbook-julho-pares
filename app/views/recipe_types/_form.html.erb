@@ -1,0 +1,13 @@
+<div>
+  <% if @recipe_type.errors.any? %>
+    <p>Você deve informar o nome do tipo de receita</p>
+  <% end %>
+</div>
+
+<%= form_with model: @recipe_type do |f| %>
+  <div class="form-group">
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Enviar', class: 'btn btn-primary' %>
+<% end %>
