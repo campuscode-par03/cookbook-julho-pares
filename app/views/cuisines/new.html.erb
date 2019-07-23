@@ -1,0 +1,13 @@
+<h1>Nova Cozinha</h1>
+<% @cuisine.errors.full_messages.each do |error| %>
+ 
+    <%= error %>
+ 
+<% end %>
+
+<%= form_with model: @cuisine, data: { remote: false } do |c| %>
+  
+  <%= c.label :name, 'Nome' %>
+  <%= c.text_field :name %>
+  <%= c.submit 'Salvar', class: 'btn btn-primary' %>
+<% end %>
