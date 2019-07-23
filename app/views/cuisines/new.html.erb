@@ -5,7 +5,7 @@
  
 <% end %>
 
-<%= form_with model: @cuisine, data: { remote: false } do |c| %>
+<%= form_with model: @cuisine, local: true do |c| %>
   
   <%= c.label :name, 'Nome' %>
   <%= c.text_field :name %>
