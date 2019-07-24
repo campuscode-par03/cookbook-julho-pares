@@ -8,4 +8,8 @@ class Recipe < ApplicationRecord
   def cook_time_min
     "#{cook_time} minutos"
   end
+
+  def self.search_by_title(title)
+    where(title: title)
+  end
 end
