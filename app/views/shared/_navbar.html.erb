@@ -21,7 +21,7 @@
       <li>
         <%= form_tag(search_path, method: :get) do %>
           <%= label_tag 'search', 'Nome da Receita' %>
-          <%= text_field_tag 'search', placeholder: 'Nome da Receita' %>
+          <%= text_field_tag 'search', '', placeholder: 'Nome da Receita' %>
           <%= submit_tag 'Buscar' %>
         <% end %>
       </li>

@@ -3,3 +3,5 @@
 
 <%= render @recipes %>
 
+<%= pluralize(@recipes.count, 'Receita encontrada', plural: 'Receitas encontradas') %>
+
