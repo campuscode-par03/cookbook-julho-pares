@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
     return redirect_to @recipe if @recipe.save
 
     @recipe_types = RecipeType.all
