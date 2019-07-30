@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :cuisines, only: %i[show new create]
   resources :lists, only: %i[index show]
   get 'search', to: 'recipes#search'
+  get '/profile', to: 'users#profile'
   
 end

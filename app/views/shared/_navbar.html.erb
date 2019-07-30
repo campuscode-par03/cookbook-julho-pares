@@ -28,13 +28,18 @@
         <% end %>
       </li>
       <li>
-          <%= link_to 'Minhas Listas', lists_path %> 
+        <%= link_to 'Minhas Listas', lists_path %> 
       </li>
       <li>
         <% if user_signed_in? %>
           <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to 'Entrar', new_user_session_path %>
+        <% end %>
+      </li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to 'Perfil',  '/profile' %>
         <% end %>
       </li>
     </ul>
