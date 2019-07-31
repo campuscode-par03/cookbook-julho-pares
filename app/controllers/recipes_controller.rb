@@ -40,6 +40,15 @@ class RecipesController < ApplicationController
     @recipes = Recipe.where("title LIKE ? ", "%#{params[:search]}%")
   end
 
+  def send_message
+    RecipesMailer.send_recipe(params[:recipe_id].to_i,
+                               params[:from],
+                               params[:to],
+                               params[:message])
+    flash[:notice] = 'E-mail enviado com sucesso!'
+    redirect_to recipe_path(params[:recipe_id])
+  end
+
   private
 
   def set_recipe
