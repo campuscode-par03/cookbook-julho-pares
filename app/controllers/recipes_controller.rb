@@ -44,7 +44,7 @@ class RecipesController < ApplicationController
     RecipesMailer.send_recipe(params[:recipe_id].to_i,
                                params[:from],
                                params[:to],
-                               params[:message])
+                               params[:message]).deliver_now!
     flash[:notice] = 'E-mail enviado com sucesso!'
     redirect_to recipe_path(params[:recipe_id])
   end
